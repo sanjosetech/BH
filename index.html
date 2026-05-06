@@ -3,32 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Binghill — Where Nature and Innovation Unite</title>
-  <meta name="description" content="Binghill designs oversized insulated drinkware and coolers for real outdoor adventures. 50oz+ capacity, 24H ice retention, adventure-proof.">
+  <title>Binghill — Our Story</title>
+  <meta name="description" content="The story behind Binghill — oversized insulated drinkware and coolers built for real outdoor adventures.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --teal:      #0D9488;
+      --teal: #0D9488;
       --teal-dark: #0f766e;
       --teal-deep: #115e59;
-      --teal-light:#f0fdfa;
-      --teal-mid:  #ccfbf1;
-      --text:      #1e293b;
-      --muted:     #64748b;
-      --white:     #ffffff;
+      --teal-light: #f0fdfa;
+      --teal-mid: #ccfbf1;
+      --text: #1e293b;
+      --muted: #64748b;
+      --white: #ffffff;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -41,9 +35,7 @@
     /* ── NAV ───────────────────────────────── */
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       padding: 16px 32px;
       display: flex;
@@ -51,18 +43,12 @@
       justify-content: space-between;
       transition: background 0.3s, box-shadow 0.3s;
     }
-
     nav.scrolled {
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(12px);
       box-shadow: 0 1px 20px rgba(0,0,0,0.08);
     }
-
-    nav .nav-logo {
-      height: 38px;
-      width: auto;
-    }
-
+    nav .nav-logo { height: 38px; width: auto; }
     nav .nav-links {
       display: flex;
       gap: 28px;
@@ -161,7 +147,6 @@
     .mobile-menu a:hover {
       opacity: 0.8;
     }
-
     nav .nav-cta {
       background: var(--teal);
       color: var(--white);
@@ -172,208 +157,167 @@
       border-radius: 50px;
       transition: background 0.2s, transform 0.2s;
     }
-
-    nav .nav-cta:hover {
-      background: var(--teal-dark);
-      transform: translateY(-1px);
-    }
+    nav .nav-cta:hover { background: var(--teal-dark); transform: translateY(-1px); }
 
     /* ── HERO ──────────────────────────────── */
-    .hero {
+    .story-hero {
       min-height: 100vh;
-      background: linear-gradient(160deg, #0D9488 0%, #0b8070 40%, #115e59 100%);
+      position: relative;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      position: relative;
       overflow: hidden;
     }
-
-    /* Subtle mesh gradient overlay */
-    .hero::before {
+    .story-hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+    }
+    .story-hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(255,255,255,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 80% 90%, rgba(0,0,0,0.1) 0%, transparent 60%);
-      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(13,148,136,0.3) 0%,
+        rgba(15,118,110,0.5) 50%,
+        rgba(17,94,89,0.85) 100%
+      );
     }
-
-    /* Decorative circle */
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
-      bottom: -200px;
-      right: -100px;
-      pointer-events: none;
-    }
-
-    .hero-inner {
+    .story-hero-inner {
       position: relative;
       z-index: 1;
-      max-width: 680px;
+      text-align: center;
+      padding: 120px 24px 80px;
     }
-
-    .hero-logo {
-      height: 130px;
-      width: auto;
-      margin: 0 auto 28px;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    .tagline {
+    .story-hero-inner .section-label {
       display: inline-block;
-      color: rgba(255,255,255,0.7);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-      animation: fadeUp 0.8s 0.1s ease both;
-    }
-
-    .hero h1 {
-      color: var(--white);
-      font-size: clamp(32px, 6vw, 58px);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-      animation: fadeUp 0.8s 0.2s ease both;
-    }
-
-    .hero p {
       color: rgba(255,255,255,0.75);
-      font-size: clamp(16px, 2vw, 19px);
-      max-width: 520px;
-      margin: 0 auto 48px;
-      line-height: 1.7;
-      animation: fadeUp 0.8s 0.3s ease both;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--white);
-      color: var(--teal);
-      text-decoration: none;
-      font-size: 17px;
+      font-size: 12px;
       font-weight: 700;
-      padding: 18px 44px;
-      border-radius: 60px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      box-shadow: 0 6px 28px rgba(0,0,0,0.18);
-      animation: fadeUp 0.8s 0.4s ease both;
-    }
-
-    .hero-cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.28);
-    }
-
-    .hero-cta svg {
-      transition: transform 0.25s ease;
-    }
-
-    .hero-cta:hover svg {
-      transform: translateX(4px);
-    }
-
-    /* Scroll indicator */
-    .scroll-hint {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255,255,255,0.4);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      animation: fadeUp 1s 0.8s ease both;
+      margin-bottom: 24px;
+    }
+    .story-hero-inner h1 {
+      color: var(--white);
+      font-size: clamp(36px, 7vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+    .story-hero-inner p {
+      color: rgba(255,255,255,0.8);
+      font-size: 20px;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
 
-    .scroll-hint .mouse {
-      width: 22px;
-      height: 34px;
-      border: 2px solid rgba(255,255,255,0.35);
-      border-radius: 12px;
+    /* ── CHAPTER BLOCKS ─────────────────────── */
+    .chapter {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+    .chapter:nth-child(even) { direction: rtl; }
+    .chapter:nth-child(even) > * { direction: ltr; }
+
+    .chapter-media {
+      overflow: hidden;
       position: relative;
     }
-
-    .scroll-hint .mouse::after {
-      content: '';
-      width: 3px;
-      height: 7px;
-      background: rgba(255,255,255,0.5);
-      border-radius: 2px;
-      position: absolute;
-      top: 6px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: scrollDot 1.8s ease infinite;
+    .chapter-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
     }
+    .chapter:hover .chapter-media img { transform: scale(1.03); }
 
-    /* ── STATS ─────────────────────────────── */
-    .stats {
+    .chapter-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(48px, 6vw, 96px) clamp(40px, 5vw, 80px);
       background: var(--white);
-      padding: 0 24px;
-      border-bottom: 1px solid #e2e8f0;
+    }
+    .chapter:nth-child(even) .chapter-content {
+      background: var(--teal-light);
+    }
+    .chapter:nth-child(3) .chapter-content {
+      background: #fff;
     }
 
-    .stats-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .stat-item {
-      text-align: center;
-      padding: 48px 24px;
-      border-right: 1px solid #e2e8f0;
-    }
-
-    .stat-item:last-child {
-      border-right: none;
-    }
-
-    .stat-number {
-      font-size: clamp(36px, 5vw, 52px);
-      font-weight: 800;
+    .chapter-number {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       color: var(--teal);
-      line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 20px;
+    }
+    .chapter-title {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.15;
       letter-spacing: -0.02em;
+      margin-bottom: 24px;
     }
-
-    .stat-label {
-      font-size: 14px;
+    .chapter-body {
+      font-size: 16px;
       color: var(--muted);
-      font-weight: 500;
+      line-height: 1.8;
+      max-width: 480px;
     }
+    .chapter-body p + p { margin-top: 16px; }
 
-    /* ── FEATURES ──────────────────────────── */
-    .features {
-      padding: 100px 24px;
-      max-width: 1100px;
+    /* ── PULL QUOTE ─────────────────────────── */
+    .pull-quote {
+      background: linear-gradient(135deg, #0D9488 0%, #115e59 100%);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .pull-quote::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 70%);
+    }
+    .pull-quote blockquote {
+      position: relative;
+      max-width: 800px;
       margin: 0 auto;
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+    .pull-quote blockquote::before {
+      content: '\201C';
+      display: block;
+      font-size: 80px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.2);
+      line-height: 1;
+      margin-bottom: -20px;
     }
 
-    .section-label {
+    /* ── WHO'S IT FOR ───────────────────────── */
+    .who-section {
+      padding: 100px 24px;
+      background: var(--teal-light);
+      text-align: center;
+    }
+    .who-section .section-label {
       display: inline-block;
       font-size: 12px;
       font-weight: 700;
@@ -382,160 +326,138 @@
       color: var(--teal);
       margin-bottom: 16px;
     }
-
-    .section-title {
-      font-size: clamp(28px, 4vw, 40px);
+    .who-section h2 {
+      font-size: clamp(28px, 4vw, 42px);
       font-weight: 800;
       color: var(--text);
-      line-height: 1.15;
-      margin-bottom: 16px;
+      margin-bottom: 64px;
       letter-spacing: -0.02em;
     }
-
-    .section-subtitle {
-      font-size: 17px;
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 64px;
-      line-height: 1.7;
-    }
-
-    .feature-grid {
+    .personas {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
     }
-
-    .feature-card {
+    .persona {
       background: var(--white);
-      border: 1px solid #e2e8f0;
       border-radius: 20px;
-      padding: 36px 28px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      padding: 32px 24px;
+      border: 1px solid var(--teal-mid);
+      transition: transform 0.25s, box-shadow 0.25s;
     }
-
-    .feature-card:hover {
+    .persona:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(13,148,136,0.1);
-      border-color: var(--teal-mid);
+      box-shadow: 0 12px 40px rgba(13,148,136,0.12);
     }
-
-    .feature-icon {
-      width: 56px;
-      height: 56px;
-      background: var(--teal-light);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      margin-bottom: 22px;
+    .persona-emoji {
+      font-size: 40px;
+      margin-bottom: 16px;
+      display: block;
     }
-
-    .feature-card h3 {
-      font-size: 18px;
+    .persona h3 {
+      font-size: 16px;
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-
-    .feature-card p {
+    .persona p {
       font-size: 14px;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
-    /* ── PRODUCT STRIP ─────────────────────── */
-    .product-strip {
-      background: linear-gradient(135deg, #0D9488 0%, #115e59 100%);
+    /* ── VALUES STRIP ───────────────────────── */
+    .values-strip {
+      background: var(--white);
       padding: 80px 24px;
+      text-align: center;
+    }
+    .values-strip h2 {
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 48px;
+      letter-spacing: -0.02em;
+    }
+    .values-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .value-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--teal-light);
+      color: var(--teal-deep);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 60px;
+      border: 1px solid var(--teal-mid);
+    }
+
+    /* ── PROMISE ────────────────────────────── */
+    .promise-section {
+      background: linear-gradient(135deg, #0D9488 0%, #115e59 100%);
+      padding: 100px 24px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-
-    .product-strip::before {
+    .promise-section::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 70%);
     }
-
-    .product-strip h2 {
+    .promise-section h2 {
+      position: relative;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
       color: var(--white);
-      font-size: clamp(26px, 4vw, 38px);
-      font-weight: 800;
-      margin-bottom: 16px;
-      position: relative;
+      line-height: 1.2;
+      max-width: 680px;
+      margin: 0 auto 32px;
+      letter-spacing: -0.02em;
     }
-
-    .product-strip p {
-      color: rgba(255,255,255,0.75);
+    .promise-section p {
+      position: relative;
+      color: rgba(255,255,255,0.8);
       font-size: 18px;
-      margin-bottom: 40px;
-      position: relative;
+      max-width: 560px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
     }
-
-    .product-strip .cta-btn {
+    .promise-section .cta-btn {
+      position: relative;
       display: inline-flex;
       align-items: center;
       gap: 10px;
       background: var(--white);
       color: var(--teal);
       text-decoration: none;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
-      padding: 18px 44px;
+      padding: 16px 40px;
       border-radius: 60px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.25s, box-shadow 0.25s;
       box-shadow: 0 6px 28px rgba(0,0,0,0.18);
-      position: relative;
     }
-
-    .product-strip .cta-btn:hover {
+    .promise-section .cta-btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 40px rgba(0,0,0,0.28);
     }
-
-    /* ── ABOUT ─────────────────────────────── */
-    .about {
-      padding: 100px 24px;
-      background: var(--teal-light);
+    .promise-section .cta-btn svg {
+      transition: transform 0.25s;
     }
-
-    .about-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-inner .section-title {
-      color: var(--teal-deep);
-    }
-
-    .about-inner p {
-      font-size: 17px;
-      color: #334155;
-      line-height: 1.9;
-      margin-bottom: 16px;
-    }
-
-    .about-values {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 40px;
-    }
-
-    .about-values span {
-      background: var(--white);
-      color: var(--teal-deep);
-      font-size: 14px;
-      font-weight: 600;
-      padding: 8px 20px;
-      border-radius: 50px;
-      border: 1px solid var(--teal-mid);
+    .promise-section .cta-btn:hover svg {
+      transform: translateX(4px);
     }
 
     /* ── FOOTER ────────────────────────────── */
@@ -544,116 +466,33 @@
       padding: 48px 24px 32px;
       text-align: center;
     }
+    footer .footer-logo { height: 44px; width: auto; margin-bottom: 20px; opacity: 0.7; }
+    footer p { color: rgba(255,255,255,0.5); font-size: 13px; margin-bottom: 8px; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: var(--white); }
 
-    footer .footer-logo {
-      height: 44px;
-      width: auto;
-      margin-bottom: 20px;
-      opacity: 0.7;
-    }
-
-    footer p {
-      color: rgba(255,255,255,0.5);
-      font-size: 13px;
-      margin-bottom: 8px;
-    }
-
-    footer a {
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: var(--white);
-    }
-
-    /* ── ANIMATIONS ────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes scrollDot {
-      0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
-      60%  { opacity: 0; transform: translateX(-50%) translateY(10px); }
-      100% { opacity: 0; transform: translateX(-50%) translateY(0); }
-    }
-
+    /* ── SCROLL REVEAL ──────────────────────── */
     .reveal {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(28px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ── RESPONSIVE ────────────────────────── */
-    @media (max-width: 640px) {
-      nav {
-        padding: 14px 20px;
-      }
-
-      nav .nav-logo {
-        height: 30px;
-      }
-
-      nav .nav-links {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .mobile-menu {
-        display: flex;
-      }
-
-      nav .nav-cta {
-        font-size: 13px;
-        padding: 8px 18px;
-      }
-
-      .hero {
-        padding: 100px 20px 60px;
-      }
-
-      .hero-logo {
-        height: 100px;
-      }
-
-      .stats-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .stat-item {
-        border-right: none;
-        border-bottom: 1px solid #e2e8f0;
-        padding: 32px 24px;
-      }
-
-      .stat-item:last-child {
-        border-bottom: none;
-      }
-
-      .features {
-        padding: 70px 20px;
-      }
-
-      .feature-card {
-        padding: 28px 22px;
-      }
-
-      .about {
-        padding: 70px 20px;
-      }
-
-      .product-strip {
-        padding: 60px 20px;
-      }
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      nav .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: flex; }
+      .story-hero-inner { padding: 100px 20px 60px; }
+      .chapter { grid-template-columns: 1fr; }
+      .chapter-media { min-height: 300px; }
+      .chapter-content { padding: 40px 24px; }
+      .personas { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .personas { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -664,6 +503,7 @@
     <img src="logo_v2_web.png" alt="Binghill" class="nav-logo">
     <div class="nav-links">
       <a href="index.html" style="color:var(--white);font-weight:600;">Home</a>
+      <a href="what-we-do.html">What We Do</a>
       <a href="story.html">Our Story</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -679,99 +519,139 @@
     <a href="index.html" onclick="closeMobileMenu()">Home</a>
     <a href="story.html" onclick="closeMobileMenu()">Our Story</a>
     <a href="https://www.amazon.com/stores/Binghill/page/8A7C7FB3-EFF9-48D9-8E88-4FB809851EA2?lp_asin=B0DTG8KY22&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto" onclick="closeMobileMenu()">Shop on Amazon</a>
-  </div>
+  </nav>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <img src="logo_v2_web.png" alt="Binghill Logo" class="hero-logo">
-      <span class="tagline">Where Nature and Innovation Unite</span>
-      <h1>Gear Built for<br>the Great Outdoors</h1>
-      <p>50oz+ insulated bottles, tumblers, and coolers engineered for hikers, athletes, tailgaters, and anyone who refuses to stop exploring.</p>
-      <a href="https://www.amazon.com/stores/Binghill/page/8A7C7FB3-EFF9-48D9-8E88-4FB809851EA2?lp_asin=B0DTG8KY22&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto" class="hero-cta" target="_blank" rel="noopener">
-        Shop on Amazon
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-    <div class="scroll-hint">
-      <div class="mouse"></div>
-      Scroll
+  <section class="story-hero">
+    <img src="story-images/mountain-trail_web.jpg" alt="Mountain trail at golden hour">
+    <div class="story-hero-inner">
+      <span class="section-label reveal">The Binghill Story</span>
+      <h1 class="reveal">Built for Those Who<br>Don't Stop</h1>
+      <p class="reveal">The story behind a brand that makes oversized insulated drinkware for real adventurers — not showroom warriors.</p>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <div class="stats-inner">
-      <div class="stat-item reveal">
-        <div class="stat-number">50oz+</div>
-        <div class="stat-label">Maximum Capacity</div>
+  <!-- CHAPTER 1 -->
+  <div class="chapter">
+    <div class="chapter-media">
+      <img src="story-images/hiker_web.jpg" alt="Hiker on a mountain trail at sunrise">
+    </div>
+    <div class="chapter-content">
+      <div class="chapter-number reveal">Chapter 01</div>
+      <h2 class="chapter-title reveal">It Started on a Mountain</h2>
+      <div class="chapter-body reveal">
+        <p>The idea for Binghill came from a simple frustration: the gear we relied on for real adventure was either boring, fragile, or way too small. We needed drinkware that could keep up — big enough for a full day on the trail, cold enough to actually taste refreshing after hours in the sun, tough enough to survive being tossed in and out of a truck bed a thousand times.</p>
+        <p>So we built it ourselves.</p>
       </div>
-      <div class="stat-item reveal">
-        <div class="stat-number">24H</div>
-        <div class="stat-label">Ice Retention</div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 2 -->
+  <div class="chapter">
+    <div class="chapter-media">
+      <img src="story-images/camping_web.jpg" alt="Camping tent in the wilderness">
+    </div>
+    <div class="chapter-content">
+      <div class="chapter-number reveal">Chapter 02</div>
+      <h2 class="chapter-title reveal">Two Years of Real Testing</h2>
+      <div class="chapter-body reveal">
+        <p>We spent two years in workshops and in the field, working with metallurgists, outdoor athletes, and everyday adventurers — people who push their gear because they push themselves. We tested everything. We broke things. We rebuilt them better.</p>
+        <p>What emerged was a line of oversized insulated drinkware and coolers designed for real life — not the showroom, not the Influencer photo op, but the actual unpredictable, beautiful chaos of getting outside and living.</p>
       </div>
-      <div class="stat-item reveal">
-        <div class="stat-number">BPA-Free</div>
-        <div class="stat-label">Eco-Friendly Materials</div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull-quote reveal">
+    <blockquote>We don't see a contradiction between natural exploration and modern engineering. We see a responsibility.</blockquote>
+  </div>
+
+  <!-- CHAPTER 3 -->
+  <div class="chapter">
+    <div class="chapter-media">
+      <img src="story-images/nature-valley_web.jpg" alt="Vast valley landscape at sunrise">
+    </div>
+    <div class="chapter-content">
+      <div class="chapter-number reveal">Chapter 03</div>
+      <h2 class="chapter-title reveal">Nature and Innovation, Together</h2>
+      <div class="chapter-body reveal">
+        <p>Binghill products are built from BPA-free, food-grade stainless steel — materials that last for years, not weeks. Every seal is tested for leak resistance. Every cooler is verified for 24-hour ice retention in real conditions.</p>
+        <p>We don't cut corners; we cut weight, because you have enough to carry. We believe the best gear doesn't just perform — it respects the places you take it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 4 -->
+  <div class="chapter">
+    <div class="chapter-media">
+      <img src="story-images/truck-camping_web.jpg" alt="Truck bed camping setup at dusk">
+    </div>
+    <div class="chapter-content">
+      <div class="chapter-number reveal">Chapter 04</div>
+      <h2 class="chapter-title reveal">What We Make</h2>
+      <div class="chapter-body reveal">
+        <p>50-ounce trail bottles. 64-ounce tumblers. 5-gallon ice buckets that actually keep ice frozen all day. Products with the capacity, durability, and design to match the people who use them.</p>
+        <p>No decorative curves. No compromise on function.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO'S IT FOR -->
+  <section class="who-section">
+    <span class="section-label reveal">Built for You</span>
+    <h2 class="reveal">Who's It For</h2>
+    <div class="personas">
+      <div class="persona reveal">
+        <span class="persona-emoji">🥾</span>
+        <h3>The Early Hiker</h3>
+        <p>Six miles before most people wake up.</p>
+      </div>
+      <div class="persona reveal">
+        <span class="persona-emoji">🏈</span>
+        <h3>The Tailgater</h3>
+        <p>First to arrive, last to leave.</p>
+      </div>
+      <div class="persona reveal">
+        <span class="persona-emoji">🎒</span>
+        <h3>The Day-Trip Parent</h3>
+        <p>Enough hydration for a full tournament day.</p>
+      </div>
+      <div class="persona reveal">
+        <span class="persona-emoji">🎣</span>
+        <h3>The Weekender Angler</h3>
+        <p>Ice that lasts until the ride home.</p>
+      </div>
+      <div class="persona reveal">
+        <span class="persona-emoji">🏕️</span>
+        <h3>The Backcountry Camper</h3>
+        <p>Demands more from gear than the industry offers.</p>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="features">
-    <span class="section-label reveal">Why Binghill</span>
-    <h2 class="section-title reveal">Engineered for Real Adventures</h2>
-    <p class="section-subtitle reveal">We don't design for showroom shelves. Every product is built, tested, and proven in the conditions our customers actually face.</p>
-
-    <div class="feature-grid">
-      <div class="feature-card reveal">
-        <div class="feature-icon">🏕️</div>
-        <h3>50oz+ Mega Capacity</h3>
-        <p>Enough hydration for a full day on the trail, at the job site, or at the tailgate. One fill and you're set.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">❄️</div>
-        <h3>24H Ice Retention</h3>
-        <p>Our ice buckets keep contents frozen all day long. Perfect for backcountry trips, beach days, and long road races.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🌿</div>
-        <h3>Eco-Friendly Materials</h3>
-        <p>BPA-free, food-grade stainless steel. Built to last for years — not weeks. Better for you, better for the planet.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🛡️</div>
-        <h3>Adventure Proof</h3>
-        <p>Leak-proof seals, drop-tested durability, and rust-resistant construction. Handles whatever you throw at it.</p>
-      </div>
+  <!-- VALUES -->
+  <section class="values-strip">
+    <h2 class="reveal">What We Stand For</h2>
+    <div class="values-list reveal">
+      <span class="value-tag">🏕️ Field Tested</span>
+      <span class="value-tag">🌿 BPA-Free</span>
+      <span class="value-tag">🛡️ Rust Resistant</span>
+      <span class="value-tag">🔒 Leak Proof</span>
+      <span class="value-tag">💪 Drop Proof</span>
+      <span class="value-tag">❄️ 24H Ice Retention</span>
+      <span class="value-tag">♻️ Built to Last</span>
+      <span class="value-tag">⚖️ No Extra Weight</span>
     </div>
   </section>
 
-  <!-- PRODUCT STRIP -->
-  <section class="product-strip">
-    <h2 class="reveal">See the Full Collection</h2>
-    <p class="reveal">From 50oz trail bottles to 5-gallon ice buckets — find your next adventure companion.</p>
+  <!-- PROMISE -->
+  <section class="promise-section">
+    <h2 class="reveal">We Will Never Be the Cheapest.<br>We Will Always Be the One You Reach For First.</h2>
+    <p class="reveal">Because when you've got the right gear, the adventure doesn't have to wait.</p>
     <a href="https://www.amazon.com/stores/Binghill/page/8A7C7FB3-EFF9-48D9-8E88-4FB809851EA2?lp_asin=B0DTG8KY22&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto" class="cta-btn reveal" target="_blank" rel="noopener">
-      Explore on Amazon
+      Explore the Collection
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="about-inner">
-      <span class="section-label reveal">Our Story</span>
-      <h2 class="section-title reveal">About Binghill</h2>
-      <p class="reveal">Binghill was born from a love of the outdoors and a belief that everyday adventure gear should be better — for you, and for the planet. We specialize in oversized insulated drinkware and coolers built for real adventures: hiking trails, campsites, sports sidelines, and tailgate parties.</p>
-      <p class="reveal">Every product is field-tested to perform in the conditions you actually face.</p>
-      <div class="about-values reveal">
-        <span>Field Tested</span>
-        <span>BPA-Free</span>
-        <span>Rust Resistant</span>
-        <span>Leak Proof</span>
-        <span>Drop Proof</span>
-      </div>
-    </div>
   </section>
 
   <!-- FOOTER -->
@@ -782,8 +662,7 @@
   </footer>
 
   <script>
-    // Navbar scroll effect
-    const nav = document.getElementById('navbar');
+    // Navbar scroll
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -799,6 +678,7 @@
       document.body.style.overflow = '';
     }
 
+    const nav = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
@@ -808,11 +688,11 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          setTimeout(() => entry.target.classList.add('visible'), i * 90);
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     reveals.forEach(el => observer.observe(el));
   </script>
