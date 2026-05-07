@@ -581,34 +581,87 @@ function applyTranslations(lang) {
   // Persist preference
   localStorage.setItem("binghill-lang", lang);
 
-  // Update switcher active state
-  document.querySelectorAll(".lang-btn").forEach(btn => {
+  // Update current lang label in trigger
+  const currentLabel = document.getElementById("lang-current");
+  if (currentLabel) {
+    const labelMap = { en:"EN", es:"ES", fr:"FR", ar:"AR", "pt-BR":"PT", zh:"ZH" };
+    currentLabel.textContent = labelMap[lang] || lang.toUpperCase();
+  }
+
+  // Update dropdown active state
+  document.querySelectorAll(".lang-dropdown button").forEach(btn => {
     btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
   });
 }
 
 function buildLangSwitcher() {
-  // Find or create the switcher container in the nav
-  let container = document.getElementById("lang-switcher");
-  if (!container) {
-    container = document.createElement("div");
-    container.id = "lang-switcher";
-    container.className = "lang-switcher";
-    const nav = document.getElementById("navbar");
-    if (nav) nav.appendChild(container);
-  }
+  const nav = document.getElementById("navbar");
+  if (!nav) return;
 
-  // Build button for each lang
-  container.innerHTML = "";
+  // Create wrapper
+  const wrap = document.createElement("div");
+  wrap.className = "lang-wrap";
+  wrap.id = "lang-wrap";
+
+  // Trigger button with globe icon
+  const trigger = document.createElement("button");
+  trigger.className = "lang-trigger";
+  trigger.id = "lang-trigger";
+  trigger.setAttribute("aria-expanded", "false");
+  trigger.innerHTML = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span id="lang-current">EN</span>
+  `;
+  trigger.addEventListener("click", toggleLangDropdown);
+
+  // Dropdown
+  const dropdown = document.createElement("div");
+  dropdown.className = "lang-dropdown";
+  dropdown.id = "lang-dropdown";
+
   Object.entries(langMeta).forEach(([code, meta]) => {
     const btn = document.createElement("button");
-    btn.className = "lang-btn";
     btn.setAttribute("data-lang", code);
-    btn.setAttribute("aria-label", meta.label);
     btn.textContent = meta.label;
-    btn.addEventListener("click", () => applyTranslations(code));
-    container.appendChild(btn);
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      applyTranslations(code);
+      closeLangDropdown();
+    });
+    dropdown.appendChild(btn);
   });
+
+  wrap.appendChild(trigger);
+  wrap.appendChild(dropdown);
+  nav.appendChild(wrap);
+
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    if (!wrap.contains(e.target)) closeLangDropdown();
+  });
+}
+
+function toggleLangDropdown() {
+  const dropdown = document.getElementById("lang-dropdown");
+  const trigger = document.getElementById("lang-trigger");
+  if (!dropdown || !trigger) return;
+  const isOpen = dropdown.classList.contains("open");
+  if (isOpen) {
+    closeLangDropdown();
+  } else {
+    dropdown.classList.add("open");
+    trigger.setAttribute("aria-expanded", "true");
+  }
+}
+
+function closeLangDropdown() {
+  const dropdown = document.getElementById("lang-dropdown");
+  const trigger = document.getElementById("lang-trigger");
+  if (dropdown) dropdown.classList.remove("open");
+  if (trigger) trigger.setAttribute("aria-expanded", "false");
 }
 
 function initI18n() {
