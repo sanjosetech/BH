@@ -204,11 +204,20 @@
     }
     .story-hero-inner h1 {
       color: var(--white);
-      font-size: clamp(36px, 7vw, 72px);
+      font-size: clamp(36px, 6vw, 66px);
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -0.03em;
       margin-bottom: 24px;
+      max-width: 14em;
+    }
+
+    @media (max-width: 1024px) {
+      .story-hero-inner h1 { max-width: 12em; }
+    }
+
+    @media (max-width: 768px) {
+      .story-hero-inner h1 { max-width: 100%; }
     }
     .story-hero-inner p {
       color: rgba(255,255,255,0.8);
