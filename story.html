@@ -148,16 +148,31 @@
       opacity: 0.8;
     }
     nav .nav-cta {
-      background: var(--teal);
-      color: var(--white);
+      background: rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      padding: 10px 24px;
+      padding: 7px 18px;
       border-radius: 50px;
-      transition: background 0.2s, transform 0.2s;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      white-space: nowrap;
     }
-    nav .nav-cta:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    nav .nav-cta:hover {
+      background: rgba(255,255,255,0.25);
+      color: var(--white);
+      border-color: rgba(255,255,255,0.4);
+    }
+    nav.scrolled .nav-cta {
+      background: rgba(13,148,136,0.1);
+      color: var(--teal);
+      border-color: rgba(13,148,136,0.3);
+    }
+    nav.scrolled .nav-cta:hover {
+      background: rgba(13,148,136,0.18);
+      color: var(--teal-dark);
+    }
 
     /* ── HERO ──────────────────────────────── */
     .story-hero {
