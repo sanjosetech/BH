@@ -48,7 +48,7 @@
       padding: 16px 32px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 24px;
       transition: background 0.3s, box-shadow 0.3s;
     }
 
@@ -63,10 +63,24 @@
       width: auto;
     }
 
+    .nav-center {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
     nav .nav-links {
       display: flex;
       gap: 28px;
       align-items: center;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     nav .nav-links a {
@@ -623,7 +637,7 @@
         height: 30px;
       }
 
-      nav .nav-links {
+      .nav-center {
         display: none;
       }
 
@@ -769,21 +783,25 @@
   <!-- NAV -->
   <nav id="navbar">
     <img src="logo_v2_web.png" alt="Binghill" class="nav-logo">
-    <div class="nav-links">
-      <a href="story.html"data-i18n="ui.navOurStory"data-i18n="what-we-do.aboutSectionLabel">Our Story</a>
-      <a href="what-we-do.html" style="color:var(--white);font-weight:600;"data-i18n="ui.navWhatWeDo">What We Do</a>
+    <div class="nav-center">
+      <div class="nav-links">
+        <a href="story.html"data-i18n="ui.navOurStory">Our Story</a>
+        <a href="what-we-do.html" style="color:var(--white);font-weight:600;"data-i18n="ui.navWhatWeDo">What We Do</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://www.amazon.com/stores/Binghill/page/8A7C7FB3-EFF9-48D9-8E88-4FB809851EA2?lp_asin=B0DTG8KY22&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto" class="nav-cta" target="_blank" rel="noopener"data-i18n="ui.navShopAmazon">Shop on Amazon</a>
+      </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
-    <a href="https://www.amazon.com/stores/Binghill/page/8A7C7FB3-EFF9-48D9-8E88-4FB809851EA2?lp_asin=B0DTG8KY22&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto" class="nav-cta" target="_blank" rel="noopener"data-i18n="ui.navShopAmazon">Shop on Amazon</a>
   </nav>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="story.html" onclick="closeMobileMenu()"data-i18n="ui.navOurStory"data-i18n="what-we-do.aboutSectionLabel">Our Story</a>
+    <a href="story.html" onclick="closeMobileMenu()"data-i18n="ui.navOurStory">Our Story</a>
     <a href="what-we-do.html" onclick="closeMobileMenu()"data-i18n="ui.navWhatWeDo">What We Do</a>
     <a href="https://www.amazon.com/stores/Binghill/page/8A7C7FB3-EFF9-48D9-8E88-4FB809851EA2?lp_asin=B0DTG8KY22&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto" onclick="closeMobileMenu()"data-i18n="ui.navShopAmazon">Shop on Amazon</a>
   </div>
@@ -818,8 +836,8 @@
         <div class="stat-label"data-i18n="what-we-do.stats24hLabel">Ice Retention</div>
       </div>
       <div class="stat-item reveal">
-        <div class="stat-number"data-i18n="what-we-do.statsBPAFreeNum"data-i18n="what-we-do.aboutValBPAFree">BPA-Free</div>
-        <div class="stat-label"data-i18n="what-we-do.statsBPAFreeLabel"data-i18n="what-we-do.feat3Title">Eco-Friendly Materials</div>
+        <div class="stat-number"data-i18n="what-we-do.statsBPAFreeNum">BPA-Free</div>
+        <div class="stat-label"data-i18n="what-we-do.statsBPAFreeLabel">Eco-Friendly Materials</div>
       </div>
     </div>
   </section>
@@ -843,7 +861,7 @@
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon">🌿</div>
-        <h3data-i18n="what-we-do.statsBPAFreeLabel"data-i18n="what-we-do.feat3Title">Eco-Friendly Materials</h3>
+        <h3data-i18n="what-we-do.feat3Title">Eco-Friendly Materials</h3>
         <pdata-i18n="what-we-do.feat3Desc">BPA-free, food-grade stainless steel. Built to last for years — not weeks. Better for you, better for the planet.</p>
       </div>
       <div class="feature-card reveal">
@@ -867,13 +885,13 @@
   <!-- ABOUT -->
   <section class="about">
     <div class="about-inner">
-      <span class="section-label reveal"data-i18n="ui.navOurStory"data-i18n="what-we-do.aboutSectionLabel">Our Story</span>
+      <span class="section-label reveal"data-i18n="ui.navOurStory">Our Story</span>
       <h2 class="section-title reveal"data-i18n="what-we-do.aboutH2">About Binghill</h2>
       <p class="reveal" data-i18n="what-we-do.aboutP1">Binghill was born from a love of the outdoors and a belief that everyday adventure gear should be better — for you, and for the planet. We specialize in oversized insulated drinkware and coolers built for real adventures: hiking trails, campsites, sports sidelines, and tailgate parties.</p>
       <p class="reveal" data-i18n="what-we-do.aboutP2">Every product is field-tested to perform in the conditions you actually face.</p>
       <div class="about-values reveal">
         <spandata-i18n="what-we-do.aboutValFieldTested">Field Tested</span>
-        <spandata-i18n="what-we-do.statsBPAFreeNum"data-i18n="what-we-do.aboutValBPAFree">BPA-Free</span>
+        <spandata-i18n="what-we-do.statsBPAFreeNum">BPA-Free</span>
         <spandata-i18n="what-we-do.aboutValRustResistant">Rust Resistant</span>
         <spandata-i18n="what-we-do.aboutValLeakProof">Leak Proof</span>
         <spandata-i18n="what-we-do.aboutValDropProof">Drop Proof</span>

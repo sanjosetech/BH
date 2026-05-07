@@ -40,8 +40,25 @@
       padding: 16px 32px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 24px;
       transition: background 0.3s, box-shadow 0.3s;
+    }
+    .nav-center {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
     nav.scrolled {
       background: rgba(255,255,255,0.95);
@@ -506,7 +523,7 @@
     /* ── RESPONSIVE ────────────────────────── */
     @media (max-width: 768px) {
       nav { padding: 14px 20px; }
-      nav .nav-links { display: none; }
+      .nav-center { display: none; }
       .hamburger { display: flex; }
       .mobile-menu { display: flex; }
       .story-hero-inner { padding: 100px 20px 60px; }
@@ -609,16 +626,20 @@
   <!-- NAV -->
   <nav id="navbar">
     <img src="logo_v2_web.png" alt="Binghill" class="nav-logo">
-    <div class="nav-links">
-      <a href="story.html" style="color:var(--white);font-weight:600;"data-i18n="ui.navOurStory">Our Story</a>
-      <a href="what-we-do.html"data-i18n="ui.navWhatWeDo">What We Do</a>
+    <div class="nav-center">
+      <div class="nav-links">
+        <a href="story.html" style="color:var(--white);font-weight:600;"data-i18n="ui.navOurStory">Our Story</a>
+        <a href="what-we-do.html"data-i18n="ui.navWhatWeDo">What We Do</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://www.amazon.com/stores/Binghill/page/8A7C7FB3-EFF9-48D9-8E88-4FB809851EA2?lp_asin=B0DTG8KY22&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto" class="nav-cta" target="_blank" rel="noopener"data-i18n="ui.navShopAmazon">Shop on Amazon</a>
+      </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
-    <a href="https://www.amazon.com/stores/Binghill/page/8A7C7FB3-EFF9-48D9-8E88-4FB809851EA2?lp_asin=B0DTG8KY22&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto" class="nav-cta" target="_blank" rel="noopener"data-i18n="ui.navShopAmazon">Shop on Amazon</a>
   </nav>
 
   <!-- MOBILE MENU -->
